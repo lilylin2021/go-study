@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package bookmanage.api;
+
+import "google/protobuf/descriptor.proto";
+import "google/api/annotations.proto";
+
+option go_package ="./;api";
+
+
+service BookManage {
+  rpc QueryBook (QueryBookRequest) returns (QueryBookResponse)  {
+      option (google.api.http) = {
+        post: "/books/",
+      };
+  }
+}
+
+message Book {
+  uint64 bid = 1;
+  string name = 2;
+  string author = 3;
+  string title = 4;
+}
+
+message QueryBookRequest {
+  string name = 1;
+}
+
+message QueryBookResponse {
+  Book book = 1;
+}

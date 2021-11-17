@@ -1,0 +1,9 @@
+username: user
+password: password
+database: test
+address: localhost
+port: 3306
+charset: utf8mb4
+connMaxLifeTime: 120
+maxOpenConns: 200
+maxIdleConns: 20
