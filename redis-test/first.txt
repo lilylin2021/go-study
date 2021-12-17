@@ -1,0 +1,32 @@
+:~$ redis-benchmark -n 100000 -d 10 -t get,set -q
+SET: 107296.14 requests per second
+GET: 105374.08 requests per second
+
+:~$ redis-benchmark -n 100000 -d 20 -t get,set -q
+SET: 105263.16 requests per second
+GET: 102669.41 requests per second
+
+:~$ redis-benchmark -n 100000 -d 50 -t get,set -q
+SET: 105152.48 requests per second
+GET: 107066.38 requests per second
+
+:~$ redis-benchmark -n 100000 -d 100 -t get,set -q
+SET: 103626.95 requests per second
+GET: 102774.92 requests per second
+
+:~$ redis-benchmark -n 100000 -d 200 -t get,set -q
+SET: 105374.08 requests per second
+GET: 106044.54 requests per second
+
+:~$ redis-benchmark -n 100000 -d 500 -t get,set -q
+SET: 103626.95 requests per second
+GET: 105708.25 requests per second
+
+:~$ redis-benchmark -n 100000 -d 1024 -t get,set -q
+SET: 105263.16 requests per second
+GET: 105708.25 requests per second
+
+:~$ redis-benchmark -n 100000 -d 5120 -t get,set -q
+SET: 99304.87 requests per second
+GET: 99900.09 requests per second
+

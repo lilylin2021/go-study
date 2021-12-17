@@ -1,0 +1,474 @@
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+(empty list or set)
+127.0.0.1:6379> info memory
+# Memory
+used_memory:832016
+used_memory_human:812.52K
+used_memory_rss:4325376
+used_memory_rss_human:4.12M
+used_memory_peak:4933152
+used_memory_peak_human:4.70M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:5.20
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> quit
+:~/code/script$ ./redis-test.sh 10
+====== lpush test_list bwwSZPToIt ======
+  1000000 requests completed in 9.23 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+99.89% <= 1 milliseconds
+99.99% <= 2 milliseconds
+99.99% <= 3 milliseconds
+99.99% <= 4 milliseconds
+100.00% <= 5 milliseconds
+100.00% <= 5 milliseconds
+108389.34 requests per second
+
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+1) "test_list"
+127.0.0.1:6379> llen test_list
+(integer) 1000000
+127.0.0.1:6379> info memory
+# Memory
+used_memory:12908592
+used_memory_human:12.31M
+used_memory_rss:16273408
+used_memory_rss_human:15.52M
+used_memory_peak:15717960
+used_memory_peak_human:14.99M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:1.26
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> 
+
+===========================================================
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+(empty list or set)
+127.0.0.1:6379> info memory
+# Memory
+used_memory:832016
+used_memory_human:812.52K
+used_memory_rss:4231168
+used_memory_rss_human:4.04M
+used_memory_peak:15717960
+used_memory_peak_human:14.99M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:5.09
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> quit
+linlifen.lily@n227-025-183:~/code/script$ ./redis-test.sh 20
+====== lpush test_list VrCGWWwgjGYyqlbjTZtc ======
+  1000000 requests completed in 9.11 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+99.90% <= 1 milliseconds
+99.99% <= 2 milliseconds
+100.00% <= 2 milliseconds
+109769.48 requests per second
+
+linlifen.lily@n227-025-183:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+1) "test_list"
+127.0.0.1:6379> llen test_list
+(integer) 1000000
+127.0.0.1:6379> info memory
+# Memory
+used_memory:22999440
+used_memory_human:21.93M
+used_memory_rss:26611712
+used_memory_rss_human:25.38M
+used_memory_peak:25800584
+used_memory_peak_human:24.61M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:1.16
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> 
+
+============================================================
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+(empty list or set)
+127.0.0.1:6379> info memory
+# Memory
+used_memory:832016
+used_memory_human:812.52K
+used_memory_rss:4222976
+used_memory_rss_human:4.03M
+used_memory_peak:25800584
+used_memory_peak_human:24.61M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:5.08
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> quit
+:~/code/script$ ./redis-test.sh 50
+====== lpush test_list vIBGQAHFPgmGNqasvrcxxRSKOYIPOfefbLDUSAIVBokPoSCnAw ======
+  1000000 requests completed in 9.06 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+99.93% <= 1 milliseconds
+99.99% <= 2 milliseconds
+100.00% <= 2 milliseconds
+110424.03 requests per second
+
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+1) "test_list"
+127.0.0.1:6379> llen test_list
+(integer) 1000000
+127.0.0.1:6379> info memory
+# Memory
+used_memory:53214416
+used_memory_human:50.75M
+used_memory_rss:57090048
+used_memory_rss_human:54.45M
+used_memory_peak:55533960
+used_memory_peak_human:52.96M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:1.07
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> 
+
+===================================================================================
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+(empty list or set)
+127.0.0.1:6379> info memory
+# Memory
+used_memory:832136
+used_memory_human:812.63K
+used_memory_rss:4182016
+used_memory_rss_human:3.99M
+used_memory_peak:55533960
+used_memory_peak_human:52.96M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:5.03
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> quit
+:~/code/script$ ./redis-test.sh 100
+====== lpush test_list UjecJfXTQbeFwCtuilAjroNBxKroxEwTAmFRqDYXWDflCLBckBQGvHGmYHpDFUnzwSstfFNycWcCuWRzqALTjHqKFFlfqPYCkMRI ======
+  1000000 requests completed in 9.02 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+99.85% <= 1 milliseconds
+99.99% <= 2 milliseconds
+100.00% <= 2 milliseconds
+110827.89 requests per second
+
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+1) "test_list"
+127.0.0.1:6379> llen test_list
+(integer) 1000000
+127.0.0.1:6379> info memory
+# Memory
+used_memory:104933736
+used_memory_human:100.07M
+used_memory_rss:109150208
+used_memory_rss_human:104.09M
+used_memory_peak:107138144
+used_memory_peak_human:102.17M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:1.04
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> 
+
+==========================================================================================
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+(empty list or set)
+127.0.0.1:6379> info memory
+# Memory
+used_memory:832256
+used_memory_human:812.75K
+used_memory_rss:4210688
+used_memory_rss_human:4.02M
+used_memory_peak:107138144
+used_memory_peak_human:102.17M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:5.06
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> quit
+:~/code/script$ ./redis-test.sh 200
+  1000000 requests completed in 9.09 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+99.83% <= 1 milliseconds
+99.98% <= 2 milliseconds
+99.99% <= 3 milliseconds
+100.00% <= 4 milliseconds
+100.00% <= 5 milliseconds
+100.00% <= 5 milliseconds
+109974.70 requests per second
+
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+1) "test_list"
+127.0.0.1:6379> llen test_list
+(integer) 1000000
+127.0.0.1:6379> info memory
+# Memory
+used_memory:206432384
+used_memory_human:196.87M
+used_memory_rss:211222528
+used_memory_rss_human:201.44M
+used_memory_peak:207627320
+used_memory_peak_human:198.01M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:1.02
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> 
+
+=========================================================================
+
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+(empty list or set)
+127.0.0.1:6379> info memory
+# Memory
+used_memory:832376
+used_memory_human:812.87K
+used_memory_rss:4198400
+used_memory_rss_human:4.00M
+used_memory_peak:207627320
+used_memory_peak_human:198.01M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:5.04
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> quit
+:~/code/script$ ./redis-test.sh 500
+  1000000 requests completed in 8.98 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+99.88% <= 1 milliseconds
+99.97% <= 2 milliseconds
+100.00% <= 3 milliseconds
+100.00% <= 3 milliseconds
+111383.38 requests per second
+
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+1) "test_list"
+127.0.0.1:6379> llen test_list
+(integer) 1000000
+127.0.0.1:6379> info memory
+# Memory
+used_memory:514832504
+used_memory_human:490.98M
+used_memory_rss:521486336
+used_memory_rss_human:497.33M
+used_memory_peak:515583120
+used_memory_peak_human:491.70M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:1.01
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379>
+
+====================================================================
+
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+(empty list or set)
+127.0.0.1:6379> info memory
+# Memory
+used_memory:832496
+used_memory_human:812.98K
+used_memory_rss:4272128
+used_memory_rss_human:4.07M
+used_memory_peak:515583120
+used_memory_peak_human:491.70M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:5.13
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> quit
+:~/code/script$ ./redis-test.sh 1024
+  500000 requests completed in 4.42 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+99.77% <= 1 milliseconds
+99.98% <= 2 milliseconds
+99.99% <= 3 milliseconds
+100.00% <= 4 milliseconds
+100.00% <= 4 milliseconds
+113173.38 requests per second
+
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+1) "test_list"
+127.0.0.1:6379> llen test_list
+(integer) 500000
+127.0.0.1:6379> info memory
+# Memory
+used_memory:588264720
+used_memory_human:561.01M
+used_memory_rss:595255296
+used_memory_rss_human:567.68M
+used_memory_peak:589361800
+used_memory_peak_human:562.06M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:1.01
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379>
+
+====================================================================  
+
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+(empty list or set)
+127.0.0.1:6379> info memory
+# Memory
+used_memory:832616
+used_memory_human:813.10K
+used_memory_rss:4321280
+used_memory_rss_human:4.12M
+used_memory_peak:589361800
+used_memory_peak_human:562.06M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:5.19
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> quit
+:~/code/script$ ./redis-test.sh 5120
+  100000 requests completed in 1.40 seconds
+  50 parallel clients
+  3 bytes payload
+  keep alive: 1
+
+94.60% <= 1 milliseconds
+99.95% <= 2 milliseconds
+100.00% <= 3 milliseconds
+100.00% <= 3 milliseconds
+71581.96 requests per second
+
+:~/code/script$ redis-cli
+127.0.0.1:6379> keys *
+1) "test_list"
+127.0.0.1:6379> llen test_list
+(integer) 100000
+127.0.0.1:6379> info memory
+# Memory
+used_memory:823232744
+used_memory_human:785.10M
+used_memory_rss:831926272
+used_memory_rss_human:793.39M
+used_memory_peak:823290432
+used_memory_peak_human:785.15M
+total_system_memory:16554778624
+total_system_memory_human:15.42G
+used_memory_lua:37888
+used_memory_lua_human:37.00K
+maxmemory:0
+maxmemory_human:0B
+maxmemory_policy:noeviction
+mem_fragmentation_ratio:1.01
+mem_allocator:jemalloc-3.6.0
+127.0.0.1:6379> 
+
+
+
